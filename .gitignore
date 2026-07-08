@@ -3,6 +3,7 @@ __pycache__/
 .ipynb_checkpoints/
 .venv/
 venv/
+vllm_env/
 .env
 .DS_Store
 results/figures/*.png
