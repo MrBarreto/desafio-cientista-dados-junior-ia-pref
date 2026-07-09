@@ -80,3 +80,22 @@ Nesse capítulo, foi calculada uma simples matriz de confusão:
 ![Texto Alternativo](/results/figures/grafico_confusao_modelo_a.png)
 
 Também defini uma funcão bem simples que particiona o dataset por algum valor de atributo e em seguida calcula a acurácia do modelo A para cada valor do atributo. Foi utilizado tanto no cal de comunicação como no bairro.
+
+# 4. Devemos Trocar de Modelo?
+
+Esse capítulo foi basicamente a aplicação do teste de McNemar tanto globalmente quanto por categoria. O teste faz parte da biblioteca statsmodels e ele recebe uma matriz 2x2 que é composta na primeira linha por casos onde ambos acertam seguido de casos onde a certa e b erra. Na segunda linha são os casos onde b acerta e a erra seguido do caso onde os dois erram.
+
+Em seguida esse mesmo processo foi repetido para cada uma das categorias, gerando a tabela abaixo:
+
+| Categoria | Vencedor | b (A>B) | c (B>A) | Margem | Estatística | p-valor |
+|---|:---:|---:|---:|---:|---:|---:|
+| esgoto_vazamento | B | 47 | 240 | 193 | 128.45 | 8.97e-30 |
+| iluminacao_publica | B | 93 | 213 | 120 | 46.28 | 1.03e-11 |
+| poda_arvore | A | 167 | 53 | 114 | 58.04 | 2.57e-14 |
+| buraco_via | B | 64 | 155 | 91 | 36.99 | 1.19e-09 |
+| coleta_lixo | B | 53 | 142 | 89 | 39.71 | 2.94e-10 |
+| barulho_perturbacao | B | 32 | 74 | 42 | 15.86 | 6.83e-05 |
+| estacionamento_irregular | B | 39 | 70 | 31 | 8.26 | 0.00406 |
+| sinalizacao | B | 22 | 44 | 22 | 6.68 | 0.00974 |
+
+# 5. Sumário Executivo
