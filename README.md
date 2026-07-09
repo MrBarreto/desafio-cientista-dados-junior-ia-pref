@@ -99,3 +99,13 @@ Em seguida esse mesmo processo foi repetido para cada uma das categorias, gerand
 | sinalizacao | B | 22 | 44 | 22 | 6.68 | 0.00974 |
 
 # 5. Sumário Executivo
+
+O prmeiro achado é referente ao desbalancemaneto das categorias de chamado. Categorias como iluminação pública ocorrem bem mais que sinalização por exemplo, então é necessário ter muito cuidado ao medir a performance do modelo. 
+
+O Segundo grande achado foi perceber que o modelo classifica erroneamente grande parte dos chamados sobre vazamento de esgoto como se fosse uma queixa de buraco na pista, isso leva a problemas de priorização e provavelmente no destacamento de equipes de reparo.
+
+O modelo também classifica chamados dos mais diversos tipos como sendo ocorrências de iluminação pública, muito provavlemnete por conta deste último ser o tipo de chamado mais comum.
+
+Foi percebido uma flutuação de performance do modelo dependendo do bairro de origem da reclamação, foram calculadas variações de até 3 p.p na acurácia.
+
+Recomendação de troca de modelo em produção: Dado o comparativo de desempenho, é possível perceber que o modelo B performa melhor em todos os cenários exceto o da poda de árvores, portanto, é recomendada a troca do modelo, uma vez que esse categoria responde a menos de 10% dos chamados. Para mitigar eventuais problemas oriundos da deficiência do modelo B nessa categoria, o que pode ser feito é manter os dois modelos (A e B) disponíveis e levar em consideração a classificação do modelo A quando a saída dele for poda_arvore. Vale ressaltar que 80% das vezes que o modelo A classificou um chamado como poda de árvores ele estava certo, por isso é bastante razoável tratar o output dele como especialista nessas situações.
