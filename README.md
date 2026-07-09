@@ -79,7 +79,7 @@ Nesse capítulo, foi calculada uma simples matriz de confusão:
 
 ![Texto Alternativo](/results/figures/grafico_confusao_modelo_a.png)
 
-Também defini uma funcão bem simples que particiona o dataset por algum valor de atributo e em seguida calcula a acurácia do modelo A para cada valor do atributo. Foi utilizado tanto no cal de comunicação como no bairro.
+Também defini uma funcão bem simples que particiona o dataset por algum valor de atributo e em seguida calcula a acurácia do modelo A para cada valor do atributo. Foi utilizado tanto no canal de comunicação como no bairro.
 
 # 4. Devemos Trocar de Modelo?
 
@@ -100,11 +100,11 @@ Em seguida esse mesmo processo foi repetido para cada uma das categorias, gerand
 
 # 5. Sumário Executivo
 
-O prmeiro achado é referente ao desbalancemaneto das categorias de chamado. Categorias como iluminação pública ocorrem bem mais que sinalização por exemplo, então é necessário ter muito cuidado ao medir a performance do modelo. 
+O prmeiro achado é referente ao desbalancemaneto das categorias de chamado. Categorias como iluminação pública ocorrem bem mais que sinalização por exemplo, então é necessário ter muita calma ao medir a performance do modelo para não fazer conclusões reducionistas.
 
 O Segundo grande achado foi perceber que o modelo classifica erroneamente grande parte dos chamados sobre vazamento de esgoto como se fosse uma queixa de buraco na pista, isso leva a problemas de priorização e provavelmente no destacamento de equipes de reparo.
 
-O modelo também classifica chamados dos mais diversos tipos como sendo ocorrências de iluminação pública, muito provavlemnete por conta deste último ser o tipo de chamado mais comum.
+O modelo também classifica chamados dos mais diversos tipos como sendo ocorrências de iluminação pública, muito provavelmente por conta deste último ser o tipo de chamado mais comum.
 
 Foi percebido uma flutuação de performance do modelo dependendo do bairro de origem da reclamação, foram calculadas variações de até 3 p.p na acurácia.
 
